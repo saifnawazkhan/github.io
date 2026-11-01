@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saif N Khan | Financial Intelligence Lab</title>
+  <meta name="description" content="Financial Intelligence Lab — a data science, quantitative analytics and AI portfolio spanning investment banking, credit risk, wealth management and enterprise analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #142B45;
+      --navy-2: #1E3A5C;
+      --teal: #087E83;
+      --slate: #64748B;
+      --ink: #111827;
+      --muted: #5B6778;
+      --line: #D9E1EA;
+      --paper: #F6F8FB;
+      --white: #FFFFFF;
+      --success: #0B6B4D;
+      --warning: #9A6700;
+      --shadow: 0 20px 50px rgba(20, 43, 69, 0.08);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f8fbff 0%, #f6f8fb 28%, #ffffff 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 18px;
+    }
+
+    .section {
+      padding: 84px 0;
+      border-top: 1px solid rgba(20, 43, 69, 0.06);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding-top: 10px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+
+    .section-title p {
+      margin: 0;
+      max-width: 800px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(246, 248, 251, 0.86);
+      border-bottom: 1px solid rgba(20, 43, 69, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .brand-sub {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--navy);
+      opacity: 0.86;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .hero {
+      padding: 84px 0 66px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top right, rgba(8, 126, 131, 0.10), transparent 34%), var(--white);
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      padding: 40px;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(38px, 6vw, 78px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      color: var(--navy);
+      max-width: 900px;
+    }
+
+    .hero-intro {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 28px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(20, 43, 69, 0.05);
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--navy);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-primary:hover { background: var(--teal); }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy);
+      border-color: rgba(20, 43, 69, 0.12);
+    }
+
+    .btn-secondary:hover {
+      color: var(--teal);
+      border-color: rgba(8, 126, 131, 0.24);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .panel-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--slate);
+      margin-bottom: 10px;
+    }
+
+    .panel-title {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .metric {
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(20,43,69,0.03), rgba(20,43,69,0.01));
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      border-radius: 18px;
+    }
+
+    .metric-number {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      line-height: 1.35;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--slate);
+    }
+
+    .quote {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(20, 43, 69, 0.08);
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 10px;
+      color: var(--slate);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .cards-3,
+    .cards-4,
+    .cards-2 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cards-4 { grid-template-columns: repeat(4, 1fr); }
+    .cards-3 { grid-template-columns: repeat(3, 1fr); }
+    .cards-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card small {
+      display: block;
+      margin-bottom: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 11px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(8, 126, 131, 0.08);
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .feature {
+      background: var(--white);
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .feature-top {
+      padding: 28px 28px 16px;
+      border-bottom: 1px solid rgba(20, 43, 69, 0.06);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: end;
+    }
+
+    .feature-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--slate);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .feature-title {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+
+    .feature-sub {
+      max-width: 700px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .feature-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .feature-body {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-box {
+      background: linear-gradient(180deg, rgba(20,43,69,0.04), rgba(20,43,69,0.015));
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .stat-box .value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 24px;
+      color: var(--navy);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .stat-box .label {
+      color: var(--slate);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .feature-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .feature-list li { margin-bottom: 10px; }
+
+    .figure {
+      background: linear-gradient(180deg, rgba(20,43,69,0.03), rgba(20,43,69,0.00));
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .mini-chart {
+      margin-top: 18px;
+      padding: 18px 10px 6px;
+      border-top: 1px solid rgba(20, 43, 69, 0.08);
+    }
+
+    .bar-group {
+      display: flex;
+      align-items: end;
+      gap: 22px;
+      height: 170px;
+      margin-bottom: 12px;
+    }
+
+    .bar-wrap {
+      flex: 1;
+      text-align: center;
+    }
+
+    .bar {
+      width: 100%;
+      max-width: 110px;
+      margin: 0 auto 12px;
+      border-radius: 14px 14px 0 0;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+      position: relative;
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,0.12);
+    }
+
+    .bar.teal {
+      background: linear-gradient(180deg, var(--teal) 0%, #0a6a6f 100%);
+    }
+
+    .bar-value {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .bar-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(20, 43, 69, 0.08);
+    }
+
+    .timeline-item:first-child { border-top: none; padding-top: 0; }
+
+    .timeline-time {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--slate);
+    }
+
+    .timeline-content h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .timeline-content p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .list-clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .list-clean li {
+      background: var(--white);
+      border: 1px solid rgba(20, 43, 69, 0.08);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .footer {
+      padding: 42px 0 70px;
+      color: var(--slate);
+    }
+
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding-top: 22px;
+      border-top: 1px solid rgba(20, 43, 69, 0.1);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .feature-body,
+      .cards-4,
+      .cards-3,
+      .cards-2,
+      .section-heading,
+      .timeline-item,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading { gap: 10px; }
+      .section-kicker { padding-top: 0; }
+      .hero { padding-top: 56px; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .hero-card, .panel, .feature-top, .feature-body, .card { padding: 22px; }
+      .nav { min-height: 68px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 11px; }
+      .metrics, .stats-grid { grid-template-columns: 1fr 1fr; }
+      .timeline-item { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-title">Financial Intelligence Lab</div>
+        <div class="brand-sub">Saif N Khan · Data Science · Quantitative Analytics · AI</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">Data Science • Quantitative Analytics • Artificial Intelligence</div>
+          <h1>Transforming complex data into intelligent decisions.</h1>
+          <p class="hero-intro">
+            An editorial-style portfolio at the intersection of advanced analytics, statistical modelling, machine learning, enterprise intelligence and applied AI.
+            The work is grounded in financial services use cases — including investment analytics, credit risk, wealth management and risk governance — while showcasing broader modern data science capabilities.
+          </p>
+          <div class="hero-meta">
+            <div class="pill">Investment Banking</div>
+            <div class="pill">Credit Risk</div>
+            <div class="pill">Wealth Management</div>
+            <div class="pill">Experimentation</div>
+            <div class="pill">Machine Learning</div>
+            <div class="pill">Generative AI</div>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#research">Explore Research</a>
+            <a class="btn btn-secondary" href="https://github.com/saifnawazkhan" target="_blank" rel="noopener">View GitHub</a>
+          </div>
+          <div class="quote">
+            Building transparent, reproducible and business-relevant analytical systems — from statistical experimentation to predictive intelligence.
+            <span>Portfolio positioning statement</span>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="panel">
+            <div class="panel-label">Current research focus</div>
+            <h2 class="panel-title">Financial data science with institutional rigor.</h2>
+            <p>
+              A portfolio architecture designed to resemble a premium financial research and analytics platform rather than a simple résumé website or collection of notebooks.
+            </p>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-number">20</div>
+                <div class="metric-label">Planned banking projects</div>
+              </div>
+              <div class="metric">
+                <div class="metric-number">01</div>
+                <div class="metric-label">Published flagship project</div>
+              </div>
+              <div class="metric">
+                <div class="metric-number">6+</div>
+                <div class="metric-label">Years analytics experience</div>
+              </div>
+              <div class="metric">
+                <div class="metric-number">85+</div>
+                <div class="metric-label">Dashboards delivered</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-label">Editorial positioning</div>
+            <h2 class="panel-title">From enterprise reporting to intelligent systems.</h2>
+            <p>
+              The portfolio intentionally broadens beyond domain labels to highlight modern capabilities in statistics, ML, causal inference, data engineering, cloud delivery, MLOps and AI applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Overview</div>
+          <div class="section-title">
+            <h2>About the portfolio.</h2>
+            <p>
+              This site presents a broader technical identity than a domain-restricted introduction. The emphasis is on applied data science, quantitative reasoning and intelligent decision systems, with banking as the primary application environment rather than the sole identity.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-2">
+          <div class="card">
+            <small>Professional profile</small>
+            <h3>Saif N Khan</h3>
+            <p>
+              A banking analytics and data engineering professional with experience across enterprise reporting, risk intelligence, data quality, performance measurement and decision-support systems. Through Financial Intelligence Lab, that foundation is extended into experimentation, machine learning, quantitative finance, generative AI and production-grade analytics.
+            </p>
+          </div>
+          <div class="card">
+            <small>Portfolio objective</small>
+            <h3>Research-led, recruiter-ready, technically credible.</h3>
+            <p>
+              Each project is structured to demonstrate a real business problem, rigorous methodology, transparent assumptions, reproducible code, measurable results and professional presentation — closely aligned with how high-quality analytics and data science work is evaluated in practice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="domains" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Domain coverage</div>
+          <div class="section-title">
+            <h2>Primary application areas.</h2>
+            <p>
+              The portfolio uses banking and financial services use cases to demonstrate modern analytics and AI methods in realistic, high-value contexts.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-4">
+          <div class="card">
+            <small>01</small>
+            <h3>Investment Banking</h3>
+            <p>Portfolio analytics, market risk, forecasting, optimization and investment research intelligence.</p>
+          </div>
+          <div class="card">
+            <small>02</small>
+            <h3>Credit Risk</h3>
+            <p>Probability of default, expected loss modelling, stress testing, explainability and model governance.</p>
+          </div>
+          <div class="card">
+            <small>03</small>
+            <h3>Wealth Management</h3>
+            <p>Client onboarding, experimentation, churn prediction, segmentation, advisory intelligence and personalization.</p>
+          </div>
+          <div class="card">
+            <small>04</small>
+            <h3>Risk & Governance</h3>
+            <p>Exception monitoring, data quality, AML analytics, operational controls and responsible AI practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Technical expertise</div>
+          <div class="section-title">
+            <h2>Technology stack and analytical capabilities.</h2>
+            <p>
+              The portfolio is intended to showcase breadth across the modern data ecosystem while maintaining depth in statistically rigorous business applications.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-4">
+          <div class="card">
+            <small>Programming & analytics</small>
+            <h3>Python, SQL & statistical computing</h3>
+            <p>Pandas, NumPy, SciPy, Statsmodels, Scikit-learn, analytical SQL and reproducible research workflows.</p>
+            <div class="tag-list">
+              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Statistics</span>
+            </div>
+          </div>
+          <div class="card">
+            <small>Machine learning</small>
+            <h3>Predictive modelling & explainability</h3>
+            <p>Classification, regression, gradient boosting, feature engineering, SHAP, model validation and monitoring.</p>
+            <div class="tag-list">
+              <span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">SHAP</span>
+            </div>
+          </div>
+          <div class="card">
+            <small>AI systems</small>
+            <h3>Generative AI & retrieval workflows</h3>
+            <p>LLMs, retrieval-augmented generation, embeddings, agentic workflows and evaluation for finance use cases.</p>
+            <div class="tag-list">
+              <span class="tag">RAG</span><span class="tag">LLMs</span><span class="tag">Agents</span>
+            </div>
+          </div>
+          <div class="card">
+            <small>Data platform</small>
+            <h3>Cloud, BI & production analytics</h3>
+            <p>Databricks, Snowflake, Spark, Power BI, Tableau, dashboarding, ETL/ELT and portfolio-grade engineering practices.</p>
+            <div class="tag-list">
+              <span class="tag">Databricks</span><span class="tag">Power BI</span><span class="tag">Tableau</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Featured research</div>
+          <div class="section-title">
+            <h2>Flagship project: Digital Wealth Management Experimentation.</h2>
+            <p>
+              The first published repository demonstrates how a portfolio project can be presented with business context, sound statistical reasoning and strong visual communication.
+            </p>
+          </div>
+        </div>
+
+        <article class="feature">
+          <div class="feature-top">
+            <div>
+              <div class="feature-label">Research 001 / Statistical Experimentation / Completed</div>
+              <h3 class="feature-title">Digital Wealth Management A/B Testing Lab</h3>
+              <p class="feature-sub">
+                An end-to-end experimentation platform evaluating whether a redesigned investment onboarding journey improves completion rates for eligible wealth clients, while monitoring guardrails relevant to banking governance and client suitability.
+              </p>
+            </div>
+            <div class="feature-links">
+              <a class="btn btn-primary" href="https://github.com/saifnawazkhan/wealth-management-ab-testing" target="_blank" rel="noopener">View Repository</a>
+              <a class="btn btn-secondary" href="#contact">Discuss Project</a>
+            </div>
+          </div>
+
+          <div class="feature-body">
+            <div>
+              <div class="stats-grid">
+                <div class="stat-box">
+                  <div class="value">20,000</div>
+                  <div class="label">Synthetic client records</div>
+                </div>
+                <div class="stat-box">
+                  <div class="value">+21.5%</div>
+                  <div class="label">Relative uplift</div>
+                </div>
+                <div class="stat-box">
+                  <div class="value">0.000000195</div>
+                  <div class="label">P-value</div>
+                </div>
+                <div class="stat-box">
+                  <div class="value">8 / 8</div>
+                  <div class="label">Automated tests passed</div>
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li>Simulates randomized control and treatment groups for digital investment account onboarding.</li>
+                <li>Implements conversion analysis, confidence intervals, hypothesis testing and experiment diagnostics.</li>
+                <li>Includes a banking-themed dashboard, SQL analysis workflow and documented methodology.</li>
+                <li>Designed as a recruiter-facing portfolio project with production-style structure and reproducibility.</li>
+              </ul>
+
+              <div class="tag-list">
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">SciPy</span>
+                <span class="tag">Statsmodels</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Experimentation</span>
+              </div>
+            </div>
+
+            <div class="figure">
+              <div class="panel-label">Illustrative project metrics</div>
+              <div class="mini-chart">
+                <div class="bar-group">
+                  <div class="bar-wrap">
+                    <div class="bar" style="height: 113px;">
+                      <div class="bar-value">11.35%</div>
+                    </div>
+                    <div class="bar-label">Control</div>
+                  </div>
+                  <div class="bar-wrap">
+                    <div class="bar teal" style="height: 138px;">
+                      <div class="bar-value">13.79%</div>
+                    </div>
+                    <div class="bar-label">Treatment</div>
+                  </div>
+                </div>
+                <p style="margin:0;color:var(--slate);font-size:13px;">
+                  Synthetic experiment results showing higher onboarding completion for the treatment journey.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Research pipeline</div>
+          <div class="section-title">
+            <h2>Upcoming portfolio roadmap.</h2>
+            <p>
+              The broader portfolio will extend across credit modelling, quantitative finance, fraud analytics, AI systems and production deployment.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <div class="card">
+            <small>Planned</small>
+            <h3>Credit Risk Prediction Engine</h3>
+            <p>Probability of default modelling with explainable ML, validation metrics and governance considerations.</p>
+          </div>
+          <div class="card">
+            <small>Planned</small>
+            <h3>Portfolio Optimization & Market Risk</h3>
+            <p>Quantitative finance project covering asset allocation, VaR, expected shortfall and stress analysis.</p>
+          </div>
+          <div class="card">
+            <small>Planned</small>
+            <h3>Investment Research RAG Assistant</h3>
+            <p>Generative AI workflow for research retrieval, synthesis and question answering over financial content.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Professional background</div>
+          <div class="section-title">
+            <h2>Career foundation behind the research.</h2>
+            <p>
+              The portfolio is grounded in real-world experience spanning enterprise reporting, data engineering, risk intelligence and cross-functional analytics delivery.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-time">Jan 2023 — Present</div>
+            <div class="timeline-content">
+              <h3>Bank of America — GWIM Risk & Governance Analyst</h3>
+              <p>Risk and governance reporting, KPI/KRI definition, data-quality analysis, management scorecards, exception review and enterprise analytics support for wealth management functions.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">Aug 2021 — Nov 2022</div>
+            <div class="timeline-content">
+              <h3>Larsen & Toubro Infotech — Senior Data Engineer</h3>
+              <p>SQL dataset development, Tableau reporting, ETL optimization, data validation and large-scale enterprise analytics delivery.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">Earlier experience</div>
+            <div class="timeline-content">
+              <h3>Analytics, forecasting and reporting roles</h3>
+              <p>Additional work across financial reporting, international business analytics and data operations, contributing to the broader foundation for this portfolio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Credentials</div>
+          <div class="section-title">
+            <h2>Certifications and tools.</h2>
+            <p>
+              Professional credentials support the portfolio, while the project work demonstrates applied capability in practice.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-2">
+          <ul class="list-clean">
+            <li><strong>AWS Certified Generative AI Developer – Professional</strong><br><span class="mono">Applied AI and generative workflows</span></li>
+            <li><strong>Salesforce Certified Tableau Consultant</strong><br><span class="mono">Business intelligence and data visualization</span></li>
+            <li><strong>Alteryx Designer Core Micro-Credential</strong><br><span class="mono">Data transformation and workflow automation</span></li>
+          </ul>
+          <div class="card">
+            <small>Core platforms</small>
+            <h3>Technology environment</h3>
+            <p>
+              Python, SQL, Tableau, Power BI, Snowflake, Databricks, Spark, SharePoint automation, Git, GitHub Actions, experimentation libraries and the expanding AI toolchain for financial analytics.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Databricks</span>
+              <span class="tag">Snowflake</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Contact</div>
+          <div class="section-title">
+            <h2>Connect and explore the work.</h2>
+            <p>
+              This portfolio will continue expanding as new banking-focused data science and AI projects are completed. For collaboration, hiring discussions or project walkthroughs, please use the links below.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <div class="card">
+            <small>Email</small>
+            <h3>Professional contact</h3>
+            <p><a href="mailto:saifnkhan2210@gmail.com">saifnkhan2210@gmail.com</a></p>
+          </div>
+          <div class="card">
+            <small>GitHub</small>
+            <h3>Source code and repositories</h3>
+            <p><a href="https://github.com/saifnawazkhan" target="_blank" rel="noopener">github.com/saifnawazkhan</a></p>
+          </div>
+          <div class="card">
+            <small>Project 01</small>
+            <h3>Wealth Management A/B Testing</h3>
+            <p><a href="https://github.com/saifnawazkhan/wealth-management-ab-testing" target="_blank" rel="noopener">Open repository</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <div>
+        <strong style="color: var(--navy);">Financial Intelligence Lab</strong><br>
+        <span>Editorial financial research style portfolio for data science, quantitative analytics and AI.</span>
+      </div>
+      <div class="mono">© 2026 Saif N Khan</div>
+    </div>
+  </footer>
+</body>
+</html>
